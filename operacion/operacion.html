@@ -29,16 +29,42 @@
     <section>
         <article>
             <form>
+                <select name="" id="">
+                    <option>
+                        suma
+                    </option>
+                    <option>
+                        resta
+                    </option>
+                </select>
                 <label>
                     Numero 1
                 </label>
-                <input type="number">
+                <input id="numero1" type="number" />
+                <label>
+                    Numero 2
+                </label>
+                <input id="numero2" type="number" />
+                <button type="button" onclick="operacion()">Calcular</button>
+                <br>
+                <label>
+                    Resultado
+                </label>
+                <input id="resultado" type="number" />
             </form>
         </article>
     </section>
     <footer>
         <p>Footer</p>
     </footer>
+    <script>
+        function operacion() {
+            var numero1 = document.getElementById("numero1").value;
+            var numero2 = document.getElementById("numero2").value;
+            var resultado = parseInt(numero1) + parseInt(numero2);
+            document.getElementById("resultado").value = resultado;
+        }
+    </script>
 </body>
 
 </html>
