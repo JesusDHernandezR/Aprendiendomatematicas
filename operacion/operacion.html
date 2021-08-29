@@ -29,7 +29,7 @@
     <section>
         <article>
             <form>
-                <select name="" id="">
+                <select name="" id="operacionSeleccionada">
                     <option>
                         suma
                     </option>
@@ -59,10 +59,28 @@
     </footer>
     <script>
         function operacion() {
+            var op = document.getElementById("operacionSeleccionada").value;
+            var numero1 = document.getElementById("numero1").value;
+            var numero2 = document.getElementById("numero2").value;
+            var resultado;
+            if (op === "suma") {
+                resultado = Suma(numero1, numero2);
+            } else if (op === "resta") {
+                resultado = Resta(numero1, numero2);
+            }
+            document.getElementById("resultado").value = resultado;
+        }
+        function Suma(numero1, numero2) {
             var numero1 = document.getElementById("numero1").value;
             var numero2 = document.getElementById("numero2").value;
             var resultado = parseInt(numero1) + parseInt(numero2);
-            document.getElementById("resultado").value = resultado;
+            return resultado;
+        }
+        function Resta(numero1, numero2) {
+            var numero1 = document.getElementById("numero1").value;
+            var numero2 = document.getElementById("numero2").value;
+            var resultado = parseInt(numero1) - parseInt(numero2);
+            return resultado;
         }
     </script>
 </body>
